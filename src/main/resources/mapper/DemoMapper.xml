@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.cgutech.roadcloud.dao.mapper.DemoMapper" >
+
+    <insert id="insertDemo" parameterType="com.cgutech.roadcloud.dao.entity.DemoEntity">
+        insert into demo(id,distribution) values(#{demo.id},#{demo.distribute})
+    </insert>
+
+    <select id="selectDemo" resultType="com.cgutech.roadcloud.dao.entity.DemoEntity">
+        select id,distribution as distribute from demo where id = #{id}
+    </select>
+
+    <!--<update id="updateById" parameterType="com.ibigsea.bootdao.entity.User">
+        update t_user set
+        username = #{userName,jdbcType=VARCHAR} ,
+        age = #{age,jdbcType=NUMERIC}
+        where id = #{id,jdbcType=NUMERIC}
+    </update>-->
+
+    <delete id="deleteById">
+        delete from demo where id = #{id}
+    </delete>
+
+    <!--<select id="queryAll" resultType="com.ibigsea.bootdao.entity.User">
+        select * from t_user
+    </select>-->
+
+</mapper>
